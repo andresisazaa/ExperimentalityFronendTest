@@ -1,0 +1,12 @@
+<article *ngIf="video" class="video-container animated fadeIn">
+    <div class="content">
+        <div class="video-iframe-container">
+            <iframe class="video-iframe" [src]="URL + video.id | safe" frameborder="0" width="800"
+                height="450"></iframe>
+        </div>
+    </div>
+    <div class="video-details">
+        <h4 class="video-title">{{video.title}}</h4>
+        <p class="video-info">{{video.description}}</p>
+    </div>
+</article>

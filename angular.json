@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/scss/styles.scss",
+              "node_modules/font-awesome/css/font-awesome.min.css"
             ],
             "scripts": []
           },
@@ -124,6 +125,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "experimentality-frontend-test"
 }

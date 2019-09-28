@@ -1,0 +1,62 @@
+@import "../../../scss/variables";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  height: 70px;
+  background-color: $green;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+.header-title {
+  margin: 0;
+  padding: 10px;
+}
+
+.search-form {
+  width: 30%;
+}
+
+.search-input {
+  width: 80%;
+  height: 50px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.search-button {
+  width: 20%;
+  height: 50px;
+  padding: 5px;
+  border: none;
+  background-color: $light-green;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .header-title {
+    display: none;
+  }
+  .search-form {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-form {
+    width: 75%;
+  }
+}
