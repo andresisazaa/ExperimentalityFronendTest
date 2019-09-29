@@ -22,7 +22,6 @@ export class YoutubeAPIService {
       .pipe(map(response => {
         let results = response['items'];
         let videos: Video[] = [];
-        console.log(response);
         Object.keys(results).forEach(item => {
           const id = results[item]['id']['videoId'];
           const { title, description } = results[item]['snippet'];

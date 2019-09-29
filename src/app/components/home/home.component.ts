@@ -20,13 +20,11 @@ export class HomeComponent implements OnInit {
   }
 
   search(query: string) {
-    console.log(query);
     this.loading = true;
     this.YoutubeAPI.searchByQuery(query).subscribe((videos: Video[]) => {
       this.loading = false;
       this.videos = videos;
       this.message = `Resultados de la busqueda: ${query}`;
-      console.log(this.videos);
       if (this.videos.length === 0) {
         this.message = 'No se obtuvieron resultados';
       }
