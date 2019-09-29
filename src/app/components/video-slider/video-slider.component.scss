@@ -9,10 +9,6 @@
   margin: 20px auto;
   justify-content: space-between;
   width: 90%;
-  -webkit-overflow-scrolling: touch;
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 .card-video {
@@ -37,4 +33,13 @@
   border-radius: 10px 10px 0 0;
   width: 250px;
   height: 150px;
+}
+
+@media screen and (max-width: 768px) {
+  .slider-container {
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }

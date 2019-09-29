@@ -1,8 +1,8 @@
 <article *ngIf="video" class="video-container animated fadeIn">
     <div class="content">
         <div class="video-iframe-container">
-            <iframe class="video-iframe" [src]="URL + video.id | safe" frameborder="0" width="800"
-                height="450"></iframe>
+            <iframe class="video-iframe" [src]="URL + video.id | safe" frameborder="0" width="800" height="450"
+                allowfullscreen></iframe>
         </div>
     </div>
     <div class="video-details">
