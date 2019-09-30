@@ -1,6 +1,17 @@
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
 .message {
   margin-left: 20px;
 }
 .loading {
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .message {
+    text-align: center;
+  }
 }

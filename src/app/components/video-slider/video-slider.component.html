@@ -1,6 +1,6 @@
 <div class="slider-container">
-    <section class="cards-slider animated fadeIn fast">
-        <div (click)="selectVideo(video.id)" class="card-video animated fadeIn" *ngFor="let video of videos">
+    <section class="cards-slider animated fast">
+        <div (click)="selectVideo(video.id)" class="card-video" *ngFor="let video of videos">
             <img class="card-thumbnail" *ngIf="video.thumbnail" [src]="video.thumbnail" [alt]="video.title">
             <p class="card-title">{{video.title | slice:0:50}}<span *ngIf="video.title.length > 50">...</span></p>
         </div>

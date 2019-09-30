@@ -3,17 +3,3 @@ body {
   background-color: $gray;
   color: $light-green;
 }
-
-::-webkit-scrollbar {
-  padding-top: 10px;
-  width: 20px;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: $green;
-  border-radius: 10px;
-}

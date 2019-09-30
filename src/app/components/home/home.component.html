@@ -1,5 +1,7 @@
-<app-navbar (searchQuery)="search($event)"></app-navbar>
-<p class="message">{{message}}</p>
-<h1 class="loading"><i *ngIf="loading" class="fa fa-spinner fa-spin fa-5x"></i></h1>
-<app-video-slider *ngIf="!loading" (selectedVideo)="watchVideo($event)" [videos]="videos"></app-video-slider>
-<app-video *ngIf="!loading" [video]="selectedVideo"></app-video>
+<app-search (searchQuery)="search($event)"></app-search>
+<div class="container">
+    <h3 *ngIf="!loading" class="message animated fadeIn faster">{{message}}</h3>
+    <h1 class="loading"><i *ngIf="loading" class="fa fa-spinner fa-spin fa-5x"></i></h1>
+    <app-video-slider *ngIf="!loading" (selectedVideo)="watchVideo($event)" [videos]="videos"></app-video-slider>
+    <app-video *ngIf="!loading" [video]="selectedVideo"></app-video>
+</div>

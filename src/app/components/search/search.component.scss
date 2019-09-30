@@ -26,20 +26,20 @@
 }
 
 .search-form {
-  width: 30%;
+  width: 450px;
 }
 
 .search-input {
   width: 80%;
-  height: 50px;
+  height: 40px;
   padding: 5px;
   box-sizing: border-box;
 }
 
 .search-button {
   width: 20%;
-  height: 50px;
-  padding: 5px;
+  height: 40px;
+  padding: 5px 0;
   border: none;
   background-color: $light-green;
   box-sizing: border-box;
@@ -51,12 +51,12 @@
     display: none;
   }
   .search-form {
-    width: 250px;
+    width: 400px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .search-form {
-    width: 75%;
+    width: 230px;
   }
 }

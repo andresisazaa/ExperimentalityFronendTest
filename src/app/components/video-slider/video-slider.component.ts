@@ -11,7 +11,7 @@ export class VideoSliderComponent {
   @Output() selectedVideo = new EventEmitter<string>();
   constructor() { }
 
-  selectVideo(id: string) {
+  selectVideo(id: string): void {
     this.selectedVideo.emit(id);
   }
 

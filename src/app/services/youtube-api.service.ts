@@ -12,12 +12,13 @@ export class YoutubeAPIService {
   private API_KEY = 'AIzaSyBvgoP0HATyjue9DAjRyq7LHOuVkUHxDO8';
   constructor(private http: HttpClient) { }
 
-  searchByQuery(query: string): Observable<Video[]> {
+  searchVideos(query: string): Observable<Video[]> {
     const params = new HttpParams()
       .set('key', this.API_KEY)
       .set('q', query)
       .set('part', 'snippet')
-      .set('maxResults', '6');
+      .set('maxResults', '6')
+      .set('type', 'video');
     return this.http.get(`${this.API_URL}/search`, { params })
       .pipe(map(response => {
         let results = response['items'];
@@ -31,5 +32,28 @@ export class YoutubeAPIService {
         });
         return videos;
       }));
+  }
+
+  mostPopularVideos(): Observable<Video[]> {
+    const params = new HttpParams()
+      .set('key', this.API_KEY)
+      .set('part', 'snippet')
+      .set('maxResults', '6')
+      .set('chart', 'mostPopular')
+      .set('regionCode', 'CO');
+    return this.http.get(`${this.API_URL}/videos`, { params })
+      .pipe(map(response => {
+        let results = response['items'];
+        let videos: Video[] = [];
+        Object.keys(results).forEach(item => {
+          const id = results[item]['id'];
+          const { title, description } = results[item]['snippet'];
+          const thumbnail = results[item]['snippet']['thumbnails']['medium']['url'];
+          const video: Video = { id, title, description, thumbnail };
+          videos.push(video);
+        });
+        return videos;
+      }));
+
   }
 }

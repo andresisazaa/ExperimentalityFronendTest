@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VideoComponent } from './components/video/video.component';
 import { HomeComponent } from './components/home/home.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { SearchComponent } from './components/search/search.component';
 import { VideoSliderComponent } from './components/video-slider/video-slider.component';
 
 import { SafePipe } from './pipes/safe.pipe';
@@ -16,7 +16,7 @@ import { SafePipe } from './pipes/safe.pipe';
     AppComponent,
     VideoComponent,
     HomeComponent,
-    NavbarComponent,
+    SearchComponent,
     VideoSliderComponent,
     SafePipe
   ],

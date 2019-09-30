@@ -7,6 +7,6 @@
     </div>
     <div class="video-details">
         <h4 class="video-title">{{video.title}}</h4>
-        <p class="video-info">{{video.description}}</p>
+        <p class="video-info">{{video.description | slice:0:300}} <span *ngIf="video.title.length > 300">...</span></p>
     </div>
 </article>

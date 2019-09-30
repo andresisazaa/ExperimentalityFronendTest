@@ -15,13 +15,26 @@ export class HomeComponent implements OnInit {
 
   constructor(private YoutubeAPI: YoutubeAPIService) { }
 
-  ngOnInit() {
-    this.search('The NBHD');
+  ngOnInit(): void {
+    this.mostPopularVideos();
   }
 
-  search(query: string) {
+  mostPopularVideos(): void {
+    this.YoutubeAPI.mostPopularVideos().subscribe((videos: Video[]) => {
+      this.loading = false;
+      this.videos = videos;
+      this.message = 'Videos populares en Colombia';
+      this.selectedVideo = this.videos[0];
+    }, error => {
+      console.log(error.message);
+      this.loading = false;
+      this.message = 'Ocurrió un error en la busqueda';
+    });
+  }
+
+  search(query: string): void {
     this.loading = true;
-    this.YoutubeAPI.searchByQuery(query).subscribe((videos: Video[]) => {
+    this.YoutubeAPI.searchVideos(query).subscribe((videos: Video[]) => {
       this.loading = false;
       this.videos = videos;
       this.message = `Resultados de la busqueda: ${query}`;
@@ -36,7 +49,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  watchVideo(id: string) {
+  watchVideo(id: string): void {
     this.selectedVideo = this.videos.find(video => video.id === id);
   }
 }
